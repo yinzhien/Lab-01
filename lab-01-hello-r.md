@@ -23,7 +23,8 @@ library(datasauRus)
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
+Based on the help file, there are 1846 rows and 3 variables. The
+variables included in the data frame are dataset, x and y.
 
 ### Exercise 2
 
