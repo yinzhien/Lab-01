@@ -21,10 +21,8 @@ The variables included in the data frame are dataset, x and y.
 
 ### Exercise 2
 
-The answers for this exercise are given for you below.
-But you should clean up some of the narrative so that it only includes what you want to turn in.
-
-First let's plot the data in the dino dataset:
+First, we plot the data in the dino dataset: 
+* Reminder, always load a package!
 
 ```{r plot-dino, fig.height=3, fig.width=6}
 dino_data <- datasaurus_dozen %>%
@@ -34,7 +32,7 @@ ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
   geom_point()
 ```
 
-And next calculate the correlation between `x` and `y` in this dataset:
+And next, we calculate the correlation between `x` and `y` in this dataset:
 
 ```{r cor-dino}
 dino_data %>%
