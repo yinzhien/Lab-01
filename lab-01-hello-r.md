@@ -83,16 +83,77 @@ star_data %>%
 
 ### Exercise 4
 
-Add code and narrative as needed. Note that two R chunks are given but
-they are not labeled. Use the convention from above to name them
-appropriately.
+Good job so far! Now let’s work on the circle data set - plot the data
+first.
+
+``` r
+circle_data <- datasaurus_dozen %>%
+   filter(dataset == "circle")
+
+ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
+  geom_point()
+```
+
+![](lab-01-hello-r_files/figure-gfm/plot-circle-1.png)<!-- -->
+
+Not to forget, calculating the correlation between `x` and `y` in the
+circle dataset:
+
+``` r
+circle_data %>%
+  summarize(r = cor(x, y))
+```
+
+    ## # A tibble: 1 × 1
+    ##         r
+    ##     <dbl>
+    ## 1 -0.0683
 
 ### Exercise 5
 
-Add code and narrative as needed.
+Finally, let’s plot all datasets at once. In order to do this, we will
+make use of faceting.
 
-To add R chunks either type out the backticks, curly braces, and the
-letter `r` or use the Insert chunk button above, green C+.
+``` r
+ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
+  geom_point()+
+  facet_wrap(~ dataset, ncol = 3) +
+  theme(legend.position = "none")
+```
+
+![](lab-01-hello-r_files/figure-gfm/plot-all-1.png)<!-- -->
+
+And then, we use the `group_by()` function to generate all the summary
+coefficients.
+
+``` r
+datasaurus_dozen %>%
+  group_by(dataset) %>%
+  summarize(r = cor(x, y)) %>%
+  print(13)
+```
+
+    ## # A tibble:
+    ## #   13 × 2
+    ##    dataset   
+    ##    <chr>     
+    ##  1 away      
+    ##  2 bullseye  
+    ##  3 circle    
+    ##  4 dino      
+    ##  5 dots      
+    ##  6 h_lines   
+    ##  7 high_lines
+    ##  8 slant_down
+    ##  9 slant_up  
+    ## 10 star      
+    ## 11 v_lines   
+    ## 12 wide_lines
+    ## 13 x_shape   
+    ## # … with 1
+    ## #   more
+    ## #   variable:
+    ## #   r <dbl>
 
 ## Bonus Tips by Yoo Ri
 
