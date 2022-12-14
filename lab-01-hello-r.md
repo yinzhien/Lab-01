@@ -159,16 +159,16 @@ datasaurus_dozen %>%
 
 Here are some helpful tips :)
 
-- filter() is for extracting rows
+- `filter()` is for extracting rows
 
-- group_by() is for grouping datasets by assigned column
+- `group_by()` is for grouping datasets by assigned column
 
-- ungroup() cancels the grouping
+- `ungroup()` cancels the grouping
 
-- summarize() is often used with group_by(). This function can print the
-  output according to the group_by().
+- `summarize()` is often used with group_by(). This function can print
+  the output according to the group_by().
 
-- facet_grid(y\~x,…) creates a grid with variable y as a row, variable x
-  as a column  
+- `facet_grid(y~x,...)` creates a grid with variable y as a row,
+  variable x as a column  
 
-- facet_wrap(x,… ) is useful when there is only one variable
+- `facet_wrap(x,... )` is useful when there is only one variable
